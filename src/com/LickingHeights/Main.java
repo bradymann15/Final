@@ -6,8 +6,6 @@ public class Main {
     static Scanner keyboard = new Scanner(System.in);
     static boolean translate = true;
     public static void main(String[] args) {
-    String message;
-    int index = 0;
     greeting();
     }
     public static final String [] morsecode =
@@ -34,5 +32,18 @@ public class Main {
         System.out.println("Hello!");
         System.out.println("Welcome to the Morse Code/English Translator!");
     }
-    public static  
+    public static String translate(Scanner keyboard){
+        System.out.println("Type 'morse' to do Morse Code to English");
+        System.out.println("Type 'english' to do English to Morse Code");
+        String message = keyboard.nextLine().toLowerCase();
+        int i, j = 0;
+        if (message == "english"){
+            message = english[i]
+        }
+        char[] chars = message.toCharArray();
+        String result = "";
+        for (int i = 0; i < chars.length; i++){
+            for (int j = 0; j)
+        }
+    }
 }
