@@ -2,19 +2,20 @@ package com.LickingHeights;
 
 import java.util.Scanner;
 
-public class Main {
-    static Scanner keyboard = new Scanner(System.in);
+class Main {
+    private static final Scanner keyboard = new Scanner(System.in);
     static boolean translate = true;
     public static void main(String[] args) {
     greeting();
+    translate(keyboard);
     }
 
-    public static void greeting(){
+    private static void greeting(){
         System.out.println("Hello!");
         System.out.println("Welcome to the Morse Code/English Translator!");
     }
-    public static String translate(Scanner keyboard){
-        String [] morsecode =
+    public static void translate(Scanner keyboard){
+        String [] morseCode =
                 //A,B,C,D,E,F,G
                 {"*-","-***","-*-*","-**","*","**-*","--*",
                         //H,I,J,K,L,M,N,O
@@ -37,21 +38,25 @@ public class Main {
         System.out.println("Type 'morse' to do Morse Code to English");
         System.out.println("Type 'english' to do English to Morse Code");
         String message = keyboard.nextLine().toLowerCase();
-        String result;
-        int i, j = 0;
+        String result = "21";
+        int I, J = 0;
         if (message == "english"){
-            message = english[i];
-            result = morsecode[i];
+            message = english[J];
+            result = morseCode[J];
         }
         else if (message == "morse"){
-            message = morsecode[i];
-            result = english[i];
+            message = morseCode[J];
+            result = english[J];
         }
         char[] chars = message.toCharArray();
-        for (i = 0; i < chars.length; i++){
-            for (j = 0; j < chars.length; j++){
+        for (I = 0; I < chars.length; I++){
+            for (J = 0; J < chars.length; J++){
+                if (message == chars[J]){
+                    
+                }
             }
 
         }
+        System.out.println(result);
     }
 }
