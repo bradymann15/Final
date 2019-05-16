@@ -1,9 +1,14 @@
 package com.LickingHeights;
 
-public class Main {
+import java.util.Scanner;
 
+public class Main {
+    static Scanner keyboard = new Scanner(System.in);
+    static boolean translate = true;
     public static void main(String[] args) {
-	
+    String message;
+    int index = 0;
+    greeting();
     }
     public static final String [] morsecode =
             //A,B,C,D,E,F,G
@@ -25,5 +30,9 @@ public class Main {
                     "X","Y","Z","1","2","3","4",
                     "5","6","7","8","9","0"
             };
-
+    public static void greeting(){
+        System.out.println("Hello!");
+        System.out.println("Welcome to the Morse Code/English Translator!");
+    }
+    public static  
 }
