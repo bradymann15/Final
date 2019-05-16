@@ -3,7 +3,7 @@ package com.LickingHeights;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+	
     }
     public static final String [] morsecode =
             //A,B,C,D,E,F,G
