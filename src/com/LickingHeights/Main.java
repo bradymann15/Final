@@ -51,12 +51,16 @@ class Main {
         char[] chars = message.toCharArray();
         for (I = 0; I < chars.length; I++){
             for (J = 0; J < chars.length; J++){
-                if (message == chars[J]){
-                    
+                if (message == "english"){
+                    message = message.replace(english[I], morseCode[I]);
+                }
+                    else if (message == "morse"){
+                    message = message.replace(morseCode[I], english[I]);
+                }
                 }
             }
-
+            System.out.println(message);
         }
-        System.out.println(result);
+
     }
-}
+
