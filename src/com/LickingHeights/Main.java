@@ -2,7 +2,7 @@ package com.LickingHeights;
 
 import java.util.Scanner;
 
-class Main {
+public class Main {
     private static final Scanner keyboard = new Scanner(System.in);
 
     public static void main(String[] args) {
