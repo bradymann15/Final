@@ -2,7 +2,7 @@ package com.LickingHeights;
 
 import java.util.Scanner;
 
-public class Main {
+class Main {
     private static final Scanner keyboard = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -11,7 +11,7 @@ public class Main {
         System.out.println("Now, type in your message");
         msg = keyboard.nextLine();
         System.out.println(msg + "\n");
-        if (msg.contains("*")){
+        if (msg.contains("*") || msg.contains("-")){
             ToEng(msg);
         }
         else{
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Welcome to the Morse Code/English Translator!");
     }
 
-    public static String ToMorse(String message) {
+    private static void ToMorse(String message) {
         String[] morseCode =
                 //A,B,C,D,E,F,G
                 {"*-", "-***", "-*-*", "-**", "*", "**-*", "--*",
@@ -46,18 +46,17 @@ public class Main {
                 "P", "Q", "R", "S", "T", "U", "V", "W",
                 "X", "Y", "Z"};
 
-        for (int a = 0; a <=44; a++) {
+        for (int a = 0; a <=0; a++) {
              message = message.replace(chars[a], morseCode[a]);
 
         }
-        for (int b = 0; b <= 25; b++) {
+        for (int b = 0; b <=0; b++) {
              message = message.replace(caps[b], morseCode[b]);
 
         }
         System.out.println(message);
-        return(message);
     }
-        public static String ToEng(String message){
+        private static void ToEng(String Message){
             String[] mCode =
                     //A,B,C,D,E,F,G
                     {"*-", "-***", "-*-*", "-**", "*", "**-*", "--*",
@@ -76,12 +75,12 @@ public class Main {
                             "X", "Y", "Z", "1", "2", "3", "4",
                             "5", "6", "7", "8", "9", "0"
                     };
-            for (int c=0; c<=44; c++){
-                message = message.replace(mCode[c], english[c]); {
+            for (int c=0; c<=0; c++){
+                Message = Message.replace(mCode[c], english[c]); {
                 }
             }
-            System.out.println(message);
-            return(message);
+            System.out.println(Message);
+
             }
     }
 
