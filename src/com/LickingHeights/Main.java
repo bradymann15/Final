@@ -4,10 +4,22 @@ import java.util.Scanner;
 
 class Main {
     private static final Scanner keyboard = new Scanner(System.in);
-    static boolean translate = true;
 
     public static void main(String[] args) {
         greeting();
+        System.out.println("Select either english or morse");
+        String msg;
+        String mode = keyboard.nextLine();
+        mode = mode.toLowerCase();
+        System.out.println("Now, type in your message");
+        msg = keyboard.nextLine();
+        System.out.println(msg + "\n");
+        if (mode == "morse"){
+            ToEng(msg);
+        }
+        else if(mode == "english"){
+            ToMorse(msg);
+        }
     }
 
     private static void greeting() {
@@ -15,7 +27,7 @@ class Main {
         System.out.println("Welcome to the Morse Code/English Translator!");
     }
 
-    public static String ToMorse(String message) {
+    public static void ToMorse(String message) {
         String[] morseCode =
                 //A,B,C,D,E,F,G
                 {"*-", "-***", "-*-*", "-**", "*", "**-*", "--*",
@@ -38,15 +50,16 @@ class Main {
                 "X", "Y", "Z"};
 
         for (int a = 0; a <= 44; a++) {
-            message = message.replace(chars[a], morseCode[a]);
+             message = message.replace(chars[a], morseCode[a]);
+             break;
         }
         for (int b = 0; b <= 44; b++) {
-            message = message.replace(caps[b], morseCode[b]);
+             message = message.replace(caps[b], morseCode[b]);
+             break;
         }
-        System.out.println(message);
-        return(message);
+
     }
-        public static String ToEng(String message){
+        public static void ToEng(String message){
             String[] mCode =
                     //A,B,C,D,E,F,G
                     {"*-", "-***", "-*-*", "-**", "*", "**-*", "--*",
@@ -66,10 +79,10 @@ class Main {
                             "5", "6", "7", "8", "9", "0"
                     };
             for (int c=0; c<=44; c++){
-                message=message.replace(mCode[c], english[c]);
+                switch (message = message.replace(mCode[c], english[c])) {
+                } break;
             }
-        System.out.println(message);
-            return(message);
+
             }
     }
 
