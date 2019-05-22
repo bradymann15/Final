@@ -7,15 +7,17 @@ class Main {
 
     public static void main(String[] args) {
         greeting();
-        String msg;
+        System.out.println("Type eng for English -> MorseCode");
+        System.out.println("Type morse for MorseCode -> English");
+        String mode = keyboard.nextLine();
         System.out.println("Now, type in your message");
-        msg = keyboard.nextLine();
+        String msg = keyboard.nextLine();
         System.out.println(msg + "\n");
         if (msg.contains("*") || msg.contains("-")){
-            ToEng(msg);
+            System.out.println(ToEng(msg));
         }
         else{
-            ToMorse(msg);
+            System.out.println(ToMorse(msg));
         }
     }
 
@@ -24,7 +26,7 @@ class Main {
         System.out.println("Welcome to the Morse Code/English Translator!");
     }
 
-    private static void ToMorse(String message) {
+    private static String ToMorse(String message) {
         String[] morseCode =
                 //A,B,C,D,E,F,G
                 {"*-", "-***", "-*-*", "-**", "*", "**-*", "--*",
@@ -46,17 +48,17 @@ class Main {
                 "P", "Q", "R", "S", "T", "U", "V", "W",
                 "X", "Y", "Z"};
 
-        for (int a = 0; a <=0; a++) {
+        for (int a = 0; a<=(chars.length-1); ++a) {
              message = message.replace(chars[a], morseCode[a]);
 
         }
-        for (int b = 0; b <=0; b++) {
+        for (int b = 0; b <=(caps.length-1); ++b) {
              message = message.replace(caps[b], morseCode[b]);
 
         }
-        System.out.println(message);
+        return(message);
     }
-        private static void ToEng(String Message){
+        private static String ToEng(String Message){
             String[] mCode =
                     //A,B,C,D,E,F,G
                     {"*-", "-***", "-*-*", "-**", "*", "**-*", "--*",
@@ -75,12 +77,11 @@ class Main {
                             "X", "Y", "Z", "1", "2", "3", "4",
                             "5", "6", "7", "8", "9", "0"
                     };
-            for (int c=0; c<=0; c++){
+            for (int c=0; c<=(mCode.length-1); ++c){
                 Message = Message.replace(mCode[c], english[c]); {
                 }
             }
-            System.out.println(Message);
-
+            return(Message);
             }
     }
 
