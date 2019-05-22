@@ -78,9 +78,8 @@ public class Main {
                             "5", "6", "7", "8", "9", "0"
                     };
             for (int c=0; c<=(mCode.length-1); ++c){
-                Message = Message.replace(mCode[c], english[c]); {
-                }
-            }
+                 Message = Message.replace(mCode[c], english[c]);
+                 }
             return(Message);
             }
     }
